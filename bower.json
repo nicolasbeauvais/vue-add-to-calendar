@@ -1,0 +1,29 @@
+{
+  "name": "vue-add-to-calendar",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nicolasbeauvais/vue-add-to-calendar",
+  "authors": [
+    "nicolasbeauvais <nicolasbeauvais1@gmail.com>"
+  ],
+  "description": "A Vue.js component that provides 'Add to Calendar' functionality",
+  "main": "dist/vue-add-to-calendar.common.js",
+  "keywords": [
+    "plugin",
+    "vue",
+    "vuejs",
+    "calendar",
+    "share",
+    "add"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "*.yml",
+    "coverage",
+    "config",
+    "dist/*.map"
+  ]
+}
