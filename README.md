@@ -51,7 +51,18 @@ Vue.use(AddToCalendar);
 ### Using the add to calendar component
 
 ```html
-<demo></demo>
+<add-to-calendar title="VueConf" location="WROCŁAW, POLAND" :start="new Date()"
+                       :end="new Date((new Date).setDate((new Date).getDate() + 1))"
+                       details="The first Official Vue.js Conference in the world!" v-cloak inline-template>
+  <div>
+    <google-calendar id="google-calendar">
+      <i class="fa fa-google"></i> Add to Google calendar
+    </google-calendar>
+    <microsoft-calendar id="microsoft-calendar">
+      <i class="fa fa-windows"></i> Add to Microsoft live calendar
+    </microsoft-calendar>
+  </div>
+</add-to-calendar>
 ```
 
 #### Available properties
@@ -60,6 +71,11 @@ List of available props to use in the component:
 
 Prop           | Data Type  | Default   | Description
 -------------- | ---------- | --------- | -----------
+`title`        | String     |           | Event title
+`details`      | String     |           | Event details
+`location`     | String     |           | Event location
+`start`        | Date       |           | Event start date
+`end`          | Date       |           | Event end date
 
 ## Feature request
 Feel free to open an issue to ask for a new calendar support.
