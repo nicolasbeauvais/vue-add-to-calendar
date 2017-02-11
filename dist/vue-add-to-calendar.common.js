@@ -1,12 +1,18 @@
 /*!
- * vue-add-to-calendar v1.0.2 
+ * vue-add-to-calendar v1.0.3 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
 
 var AddToCalendarMixin = {
-  template: '<a :href="$parent.calendarUrl(calendar)" v-bind:class="`vue-add-to-calendar ${calendar}-calendar`" target="_blank"><slot></slot></a>'
+  template: "<a :href=\"$parent.calendarUrl(calendar)\" :class=\"calendarClass\" target=\"_blank\"><slot></slot></a>",
+
+  computed: {
+    calendarClass: function calendarClass () {
+      return ['vue-add-to-calendar', ((this.calendar) + "-calendar")];
+    }
+  }
 };
 
 var calendars = {
@@ -148,7 +154,7 @@ var AddToCalendar = {
   }
 };
 
-AddToCalendar.version = '1.0.2';
+AddToCalendar.version = '1.0.3';
 
 AddToCalendar.install = function (Vue) {
   Vue.component('add-to-calendar', AddToCalendar);
