@@ -1,5 +1,5 @@
 /*!
- * vue-add-to-calendar v1.0.0 
+ * vue-add-to-calendar v1.0.1 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -93,7 +93,7 @@ var AddToCalendar = {
     },
 
     formattedDate: function formattedDate (date) {
-      return date.toISOString().replace(/-|:|\.\d+/g, '');
+      return date ? date.toISOString().replace(/-|:|\.\d+/g, '') : null;
     }
   },
 
@@ -116,7 +116,7 @@ var AddToCalendar = {
   }
 };
 
-AddToCalendar.version = '1.0.0';
+AddToCalendar.version = '1.0.1';
 
 AddToCalendar.install = function (Vue) {
   Vue.component('add-to-calendar', AddToCalendar);
