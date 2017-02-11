@@ -20,7 +20,7 @@ var calendars = {
       var parameters = {
         text: title,
         location: location,
-        details: details,
+        details: details
       };
 
       if (start && end) {
@@ -39,7 +39,7 @@ var calendars = {
         location: location,
         details: details,
         dtstart: start,
-        dtend: end,
+        dtend: end
       };
     }
   }
@@ -90,7 +90,7 @@ var AddToCalendar = {
     end: {
       type: Date,
       default: null
-    },
+    }
   },
 
   data: function data () {

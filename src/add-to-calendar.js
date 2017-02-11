@@ -4,10 +4,10 @@ export const calendars = {
   google: {
     url: 'http://www.google.com/calendar/event?action=TEMPLATE&trp=false',
     parameters (title, location, details, start, end) {
-      let parameters = {
+      const parameters = {
         text: title,
         location: location,
-        details: details,
+        details: details
       };
 
       if (start && end) {
@@ -26,7 +26,7 @@ export const calendars = {
         location: location,
         details: details,
         dtstart: start,
-        dtend: end,
+        dtend: end
       };
     }
   }
@@ -77,7 +77,7 @@ export default {
     end: {
       type: Date,
       default: null
-    },
+    }
   },
 
   data () {
@@ -98,7 +98,7 @@ export default {
      */
     calendarUrl (calendar) {
       let url = this.calendars[calendar].url;
-      let parameters = this.calendars[calendar].parameters(
+      const parameters = this.calendars[calendar].parameters(
         this.title,
         this.location,
         this.details,
@@ -106,7 +106,7 @@ export default {
         this.formattedDate(this.end)
       );
 
-      for (let key in parameters) {
+      for (const key in parameters) {
         if (parameters.hasOwnProperty(key) && parameters[key]) {
           url += `&${key}=${parameters[key]}`;
         }
