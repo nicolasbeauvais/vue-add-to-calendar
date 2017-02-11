@@ -2,7 +2,6 @@
 
 [![Release](https://img.shields.io/github/release/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-add-to-calendar/releases)
 [![Build Status](https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar.svg?branch=master)](https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar)
-[![Build Status](https://img.shields.io/travis/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square)](https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar)
 [![Coverage Status](https://img.shields.io/coveralls/nicolasbeauvais/vue-add-to-calendar/master.svg?style=flat-square)](https://coveralls.io/github/nicolasbeauvais/vue-add-to-calendar?branch=master)
 [![Downloads](https://img.shields.io/npm/dt/vue-add-to-calendar.svg?style=flat-square)](https://www.npmjs.com/package/vue-add-to-calendar)
 [![License](https://img.shields.io/github/license/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-add-to-calendar/blob/master/LICENSE)
