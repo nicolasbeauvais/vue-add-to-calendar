@@ -84,7 +84,7 @@ export default {
     },
 
     formattedDate (date) {
-      return date.toISOString().replace(/-|:|\.\d+/g, '');
+      return date ? date.toISOString().replace(/-|:|\.\d+/g, '') : null;
     }
   },
 
