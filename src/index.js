@@ -1,6 +1,6 @@
 import AddToCalendar from './add-to-calendar';
 
-AddToCalendar.version = '1.0.0';
+AddToCalendar.version = '1.0.1';
 
 AddToCalendar.install = (Vue) => {
   Vue.component('add-to-calendar', AddToCalendar);
