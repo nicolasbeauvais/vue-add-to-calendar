@@ -2,11 +2,33 @@ import AddToCalendarMixin from './add-to-calendar-mixin';
 
 export const calendars = {
   google: {
-    url: 'http://www.google.com/calendar/event?action=TEMPLATE&trp=false&text=@title&dates=@start/@end&location=@location&details=@details'
+    url: 'http://www.google.com/calendar/event?action=TEMPLATE&trp=false',
+    parameters (title, location, details, start, end) {
+      let parameters = {
+        text: title,
+        location: location,
+        details: details,
+      };
+
+      if (start && end) {
+        parameters.dates = `${start}/${end}`;
+      }
+
+      return parameters;
+    }
   },
 
   microsoft: {
-    url: 'http://calendar.live.com/calendar/calendar.aspx?rru=addevent&dtstart=@start&dtend=@end&summary=@title&location=@location'
+    url: 'http://calendar.live.com/calendar/calendar.aspx?rru=addevent',
+    parameters (title, location, details, start, end) {
+      return {
+        summary: title,
+        location: location,
+        details: details,
+        dtstart: start,
+        dtend: end,
+      };
+    }
   }
 };
 
@@ -17,6 +39,24 @@ export default {
      * @var string
      */
     title: {
+      type: String,
+      default: ''
+    },
+
+    /**
+     * Event location.
+     * @var string
+     */
+    location: {
+      type: String,
+      default: ''
+    },
+
+    /**
+     * Event details.
+     * @var string
+     */
+    details: {
       type: String,
       default: ''
     },
@@ -38,24 +78,6 @@ export default {
       type: Date,
       default: null
     },
-
-    /**
-     * Event location.
-     * @var string
-     */
-    location: {
-      type: String,
-      default: ''
-    },
-
-    /**
-     * Event details.
-     * @var string
-     */
-    details: {
-      type: String,
-      default: ''
-    }
   },
 
   data () {
@@ -75,12 +97,22 @@ export default {
      * @param calendar.
      */
     calendarUrl (calendar) {
-      return this.calendars[calendar].url
-        .replace(/@title/g, this.title)
-        .replace(/@start/g, this.formattedDate(this.start))
-        .replace(/@end/g, this.formattedDate(this.end))
-        .replace(/@location/g, this.location)
-        .replace(/@details/g, this.details);
+      let url = this.calendars[calendar].url;
+      let parameters = this.calendars[calendar].parameters(
+        this.title,
+        this.location,
+        this.details,
+        this.formattedDate(this.start),
+        this.formattedDate(this.end)
+      );
+
+      for (let key in parameters) {
+        if (parameters.hasOwnProperty(key) && parameters[key]) {
+          url += `&${key}=${parameters[key]}`;
+        }
+      }
+
+      return url;
     },
 
     formattedDate (date) {

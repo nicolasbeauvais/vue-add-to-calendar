@@ -1,5 +1,5 @@
 /*!
- * vue-add-to-calendar v1.0.1 
+ * vue-add-to-calendar v1.0.2 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -15,11 +15,33 @@ var AddToCalendarMixin = {
 
 var calendars = {
   google: {
-    url: 'http://www.google.com/calendar/event?action=TEMPLATE&trp=false&text=@title&dates=@start/@end&location=@location&details=@details'
+    url: 'http://www.google.com/calendar/event?action=TEMPLATE&trp=false',
+    parameters: function parameters (title, location, details, start, end) {
+      var parameters = {
+        text: title,
+        location: location,
+        details: details,
+      };
+
+      if (start && end) {
+        parameters.dates = start + "/" + end;
+      }
+
+      return parameters;
+    }
   },
 
   microsoft: {
-    url: 'http://calendar.live.com/calendar/calendar.aspx?rru=addevent&dtstart=@start&dtend=@end&summary=@title&location=@location'
+    url: 'http://calendar.live.com/calendar/calendar.aspx?rru=addevent',
+    parameters: function parameters$1 (title, location, details, start, end) {
+      return {
+        summary: title,
+        location: location,
+        details: details,
+        dtstart: start,
+        dtend: end,
+      };
+    }
   }
 };
 
@@ -30,6 +52,24 @@ var AddToCalendar = {
      * @var string
      */
     title: {
+      type: String,
+      default: ''
+    },
+
+    /**
+     * Event location.
+     * @var string
+     */
+    location: {
+      type: String,
+      default: ''
+    },
+
+    /**
+     * Event details.
+     * @var string
+     */
+    details: {
       type: String,
       default: ''
     },
@@ -51,24 +91,6 @@ var AddToCalendar = {
       type: Date,
       default: null
     },
-
-    /**
-     * Event location.
-     * @var string
-     */
-    location: {
-      type: String,
-      default: ''
-    },
-
-    /**
-     * Event details.
-     * @var string
-     */
-    details: {
-      type: String,
-      default: ''
-    }
   },
 
   data: function data () {
@@ -88,12 +110,22 @@ var AddToCalendar = {
      * @param calendar.
      */
     calendarUrl: function calendarUrl (calendar) {
-      return this.calendars[calendar].url
-        .replace(/@title/g, this.title)
-        .replace(/@start/g, this.formattedDate(this.start))
-        .replace(/@end/g, this.formattedDate(this.end))
-        .replace(/@location/g, this.location)
-        .replace(/@details/g, this.details);
+      var url = this.calendars[calendar].url;
+      var parameters = this.calendars[calendar].parameters(
+        this.title,
+        this.location,
+        this.details,
+        this.formattedDate(this.start),
+        this.formattedDate(this.end)
+      );
+
+      for (var key in parameters) {
+        if (parameters.hasOwnProperty(key) && parameters[key]) {
+          url += "&" + key + "=" + (parameters[key]);
+        }
+      }
+
+      return url;
     },
 
     formattedDate: function formattedDate (date) {
@@ -120,7 +152,7 @@ var AddToCalendar = {
   }
 };
 
-AddToCalendar.version = '1.0.1';
+AddToCalendar.version = '1.0.2';
 
 AddToCalendar.install = function (Vue) {
   Vue.component('add-to-calendar', AddToCalendar);
