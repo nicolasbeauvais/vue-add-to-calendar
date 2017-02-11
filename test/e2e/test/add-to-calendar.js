@@ -8,7 +8,7 @@ function newWindowCheck (expectedUrl) {
   };
 }
 
-var url = 'http://localhost:8080/examples/example.html';
+var url = 'http://127.0.0.1:8080/examples/example.html';
 
 module.exports = {
   'add to google calendar': function (browser) {
