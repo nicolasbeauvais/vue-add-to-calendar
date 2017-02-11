@@ -1,0 +1,3 @@
+[submodule "build"]
+	path = build
+	url = git@github.com:nicolasbeauvais/vue-add-to-calendar.git
