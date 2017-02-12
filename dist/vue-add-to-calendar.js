@@ -1,5 +1,5 @@
 /*!
- * vue-add-to-calendar v1.0.3 
+ * vue-add-to-calendar v1.0.4 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -43,7 +43,7 @@ var calendars = {
       return {
         summary: title,
         location: location,
-        details: details,
+        description: details,
         dtstart: start,
         dtend: end
       };
@@ -118,11 +118,11 @@ var AddToCalendar = {
     calendarUrl: function calendarUrl (calendar) {
       var url = this.calendars[calendar].url;
       var parameters = this.calendars[calendar].parameters(
-        this.title,
-        this.location,
-        this.details,
-        this.formattedDate(this.start),
-        this.formattedDate(this.end)
+        this.formatString(this.title),
+        this.formatString(this.location),
+        this.formatString(this.details),
+        this.formatDate(this.start),
+        this.formatDate(this.end)
       );
 
       for (var key in parameters) {
@@ -134,7 +134,11 @@ var AddToCalendar = {
       return url;
     },
 
-    formattedDate: function formattedDate (date) {
+    formatString: function formatString (string) {
+      return encodeURIComponent(string).replace(/%20/g, '+');
+    },
+
+    formatDate: function formatDate (date) {
       return date ? date.toISOString().replace(/-|:|\.\d+/g, '') : null;
     }
   },
@@ -158,7 +162,7 @@ var AddToCalendar = {
   }
 };
 
-AddToCalendar.version = '1.0.3';
+AddToCalendar.version = '1.0.4';
 
 AddToCalendar.install = function (Vue) {
   Vue.component('add-to-calendar', AddToCalendar);

@@ -1,3 +1,7 @@
+<a name="1.0.4"></a>
+# [1.0.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/1.0.3...1.0.4) (2017-02-12)
+- Encode text parameters, fix microsoft description parameter
+
 <a name="1.0.3"></a>
 # [1.0.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/1.0.2...1.0.3) (2017-02-11)
 - Update slot rendering
