@@ -24,7 +24,7 @@ export const calendars = {
       return {
         summary: title,
         location: location,
-        details: details,
+        description: details,
         dtstart: start,
         dtend: end
       };
@@ -99,11 +99,11 @@ export default {
     calendarUrl (calendar) {
       let url = this.calendars[calendar].url;
       const parameters = this.calendars[calendar].parameters(
-        this.title,
-        this.location,
-        this.details,
-        this.formattedDate(this.start),
-        this.formattedDate(this.end)
+        this.formatString(this.title),
+        this.formatString(this.location),
+        this.formatString(this.details),
+        this.formatDate(this.start),
+        this.formatDate(this.end)
       );
 
       for (const key in parameters) {
@@ -115,7 +115,11 @@ export default {
       return url;
     },
 
-    formattedDate (date) {
+    formatString (string) {
+      return encodeURIComponent(string).replace(/%20/g, '+');
+    },
+
+    formatDate (date) {
       return date ? date.toISOString().replace(/-|:|\.\d+/g, '') : null;
     }
   },
