@@ -1,8 +1,16 @@
 import Vue from 'vue';
-import AddToCalendar from '../../src/add-to-calendar';
+import AddToCalendar, { calendars } from '../../src/add-to-calendar';
 import AddToCalendarMixin from '../../src/add-to-calendar-mixin';
 
 describe('AddToCalendar', () => {
+  const event = {
+    title: 'VueConf',
+    location: 'WROCŁAW, POLAND',
+    start: new Date(),
+    end: new Date((new Date()).setDate((new Date()).getDate() + 1)),
+    details: 'The first Official Vue.js Conference in the world!'
+  };
+
   const createComponent = (propsData = {}, attr = {}, mixin = AddToCalendarMixin) => {
     const Ctor = Vue.extend({
       template: `
@@ -33,26 +41,44 @@ describe('AddToCalendar', () => {
     }).$mount();
   };
 
-  // Inspect the raw component options
   it('has a mounted method', () => {
     expect(typeof AddToCalendar.mounted).toBe('function');
   });
 
-  // Evaluate the results of functions in
-  // the raw component options
+  it('has a valid template', () => {
+    expect(typeof AddToCalendarMixin.template).toBe('string');
+
+    const vm = createComponent().$children[0];
+
+    expect(vm.$children[0].$el.text.trim()).toBe('Add to Google calendar');
+    expect(vm.$children[1].$el.text.trim()).toBe('Add to Microsoft live calendar');
+
+    expect(vm.$children[0].$el.href).toContain(calendars.google.url);
+    expect(vm.$children[1].$el.href).toContain(calendars.microsoft.url);
+  });
+
+  it('has a calendar class computed property', () => {
+    expect(typeof AddToCalendarMixin.template).toBe('string');
+  });
+
   it('sets the correct default data', () => {
     expect(typeof AddToCalendar.data).toBe('function');
+
     const defaultData = AddToCalendar.data();
     expect(typeof defaultData.calendars).toBe('object');
+    expect(defaultData.calendars).toBe(calendars);
   });
 
-  xit('should set component aliases correctly', () => {
-    createComponent();
-
-    // const vm = createComponent();
-    // console.log(vm.components, vm.google);
-  });
-
-  xit('should get correct calendar url', () => {
+  it('should set url parameters correctly', () => {
+    for (const calendar in calendars) {
+      expect(typeof calendars[calendar].parameters).toBe('function');
+      expect(typeof calendars[calendar].parameters(
+        event.title,
+        event.location,
+        event.description,
+        event.start,
+        event.end
+      )).toBe('object');
+    }
   });
 });
