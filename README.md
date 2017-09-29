@@ -9,7 +9,7 @@
 
 A Vue.js component that provides 'Add to Calendar' functionality
 
-##[Demo](https://nicolasbeauvais.github.io/vue-add-to-calendar/)
+## [Demo](https://nicolasbeauvais.github.io/vue-add-to-calendar/)
 &nbsp;
 ## Include support for:
 - Google calendar
