@@ -19,14 +19,14 @@ export const calendars = {
   },
 
   microsoft: {
-    url: 'http://calendar.live.com/calendar/calendar.aspx?rru=addevent',
+    url: 'https://outlook.live.com/owa/?rru=addevent',
     parameters (title, location, details, start, end) {
       return {
-        summary: title,
+        subject: title,
         location: location,
-        description: details,
-        dtstart: start,
-        dtend: end
+        body: details,
+        startdt: start,
+        enddt: end
       };
     }
   }
