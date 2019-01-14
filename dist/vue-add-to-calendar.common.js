@@ -1,6 +1,6 @@
 /*!
  * vue-add-to-calendar v1.0.4 
- * (c) 2017 nicolasbeauvais
+ * (c) 2019 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
@@ -34,14 +34,14 @@ var calendars = {
   },
 
   microsoft: {
-    url: 'http://calendar.live.com/calendar/calendar.aspx?rru=addevent',
+    url: 'https://outlook.live.com/owa/?rru=addevent',
     parameters: function parameters$1 (title, location, details, start, end) {
       return {
-        summary: title,
+        subject: title,
         location: location,
-        description: details,
-        dtstart: start,
-        dtend: end
+        body: details,
+        startdt: start,
+        enddt: end
       };
     }
   }
