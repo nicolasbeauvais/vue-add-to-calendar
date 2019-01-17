@@ -48,6 +48,19 @@ var calendars = {
         enddt: end
       };
     }
+  },
+
+  office365: {
+    url: 'https://outlook.office.com/owa/?path=/calendar/action/compose&rru=addevent',
+    parameters: function parameters$2 (title, location, details, start, end) {
+      return {
+        subject: title,
+        location: location,
+        body: details,
+        startdt: start,
+        enddt: end
+      };
+    }
   }
 };
 
@@ -158,6 +171,10 @@ var AddToCalendar = {
     'microsoft-calendar': {
       mixins: [AddToCalendarMixin],
       data: function () { return { calendar: 'microsoft' }; }
+    },
+    'office365-calendar': {
+      mixins: [AddToCalendarMixin],
+      data: function () { return { calendar: 'office365' }; }
     }
   }
 };
