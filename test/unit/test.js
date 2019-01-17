@@ -22,6 +22,9 @@ describe('AddToCalendar', () => {
             <microsoft-calendar id="microsoft-calendar">
               Add to Microsoft live calendar
             </microsoft-calendar>
+            <office365-calendar id="office365-calendar">
+              Add to Office365 outlook calendar
+            </office365-calendar>
           </div>
         </add-to-calendar>
       `,
@@ -52,9 +55,11 @@ describe('AddToCalendar', () => {
 
     expect(vm.$children[0].$el.text.trim()).toBe('Add to Google calendar');
     expect(vm.$children[1].$el.text.trim()).toBe('Add to Microsoft live calendar');
+    expect(vm.$children[2].$el.text.trim()).toBe('Add to Office365 outlook calendar');
 
     expect(vm.$children[0].$el.href).toContain(calendars.google.url);
     expect(vm.$children[1].$el.href).toContain(calendars.microsoft.url);
+    expect(vm.$children[2].$el.href).toContain(calendars.microsoft.url);
   });
 
   it('has a calendar class computed property', () => {
