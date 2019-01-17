@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-    <script src="../dist/vue-add-to-calendar.js"></script>
+    <script src="../dist/vue-add-to-calendar.common.js"></script>
   </head>
   <body>
     <div id="app">
@@ -25,13 +25,17 @@
                 <i class="fa fa-windows"></i> Add to Microsoft live calendar
               </microsoft-calendar>
             </li>
+            <li>
+              <office365-calendar id="office365-calendar">
+                <i class="fa fa-windows"></i> Add to Office365 outlook calendar
+              </office365-calendar>
+            </li>
           </ul>
         </div>
       </add-to-calendar>
     </div>
     <script>
       Vue.use(AddToCalendar);
-
       new Vue({
         el: '#app',
         data: {}

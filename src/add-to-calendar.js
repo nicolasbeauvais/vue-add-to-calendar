@@ -29,6 +29,19 @@ export const calendars = {
         enddt: end
       };
     }
+  },
+
+  office365: {
+    url: 'https://outlook.office.com/owa/?path=/calendar/action/compose&rru=addevent',
+    parameters (title, location, details, start, end) {
+      return {
+        subject: title,
+        location: location,
+        body: details,
+        startdt: start,
+        enddt: end
+      };
+    }
   }
 };
 
@@ -139,6 +152,10 @@ export default {
     'microsoft-calendar': {
       mixins: [AddToCalendarMixin],
       data: function () { return { calendar: 'microsoft' }; }
+    },
+    'office365-calendar': {
+      mixins: [AddToCalendarMixin],
+      data: function () { return { calendar: 'office365' }; }
     }
   }
 };
