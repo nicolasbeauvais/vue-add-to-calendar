@@ -1,6 +1,6 @@
 /*!
- * vue-add-to-calendar v1.0.4 
- * (c) 2017 nicolasbeauvais
+ * vue-add-to-calendar v1.0.5 
+ * (c) 2020 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
@@ -34,14 +34,14 @@ var calendars = {
   },
 
   microsoft: {
-    url: 'http://calendar.live.com/calendar/calendar.aspx?rru=addevent',
+    url: 'https://outlook.live.com/owa/?rru=addevent',
     parameters: function parameters$1 (title, location, details, start, end) {
       return {
-        summary: title,
+        subject: title,
         location: location,
-        description: details,
-        dtstart: start,
-        dtend: end
+        body: details,
+        startdt: start,
+        enddt: end
       };
     }
   }
@@ -158,7 +158,7 @@ var AddToCalendar = {
   }
 };
 
-AddToCalendar.version = '1.0.4';
+AddToCalendar.version = '1.0.5';
 
 AddToCalendar.install = function (Vue) {
   Vue.component('add-to-calendar', AddToCalendar);

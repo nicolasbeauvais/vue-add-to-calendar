@@ -1,7 +1,7 @@
 {
   "name": "vue-add-to-calendar",
-  "description": "A Vue.js component that provides 'Add to Calendar' functionality",
-  "version": "1.0.4",
+  "description": "A Vue.js component providing 'Add to Calendar' functionality",
+  "version": "1.0.5",
   "author": {
     "name": "nicolasbeauvais",
     "email": "nicolasbeauvais1@gmail.com"
