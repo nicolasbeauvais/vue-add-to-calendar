@@ -1,11 +1,13 @@
 <h1 align="center">Vue Add To Calendar</h1>
 
-[![Release](https://img.shields.io/github/release/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-add-to-calendar/releases)
-[![Build Status](https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar.svg?branch=master)](https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar)
-[![Coverage Status](https://img.shields.io/coveralls/nicolasbeauvais/vue-add-to-calendar/master.svg?style=flat-square)](https://coveralls.io/github/nicolasbeauvais/vue-add-to-calendar?branch=master)
-[![Downloads](https://img.shields.io/npm/dt/vue-add-to-calendar.svg?style=flat-square)](https://www.npmjs.com/package/vue-add-to-calendar)
-[![License](https://img.shields.io/github/license/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-add-to-calendar/blob/master/LICENSE)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+<p align="center">
+<a href="https://github.com/nicolasbeauvais/vue-add-to-calendar/releases"><img src="https://img.shields.io/github/release/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square" alt="Release"></a>
+<a href="https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar"><img src="https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/nicolasbeauvais/vue-add-to-calendar?branch=master"><img src="https://img.shields.io/coveralls/nicolasbeauvais/vue-add-to-calendar/master.svg?style=flat-square" alt="Coverage Status"></a>
+<a href="https://www.npmjs.com/package/vue-add-to-calendar"><img src="https://img.shields.io/npm/dt/vue-add-to-calendar.svg?style=flat-square" alt="Downloads"></a>
+<a href="https://github.com/nicolasbeauvais/vue-add-to-calendar/blob/master/LICENSE"><img src="https://img.shields.io/github/license/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square" alt="License"></a>
+<a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg" alt="vue2"></a>
+</p>
 
 <h3 align="center">A Vue.js renderless component providing 'Add to Calendar' functionality</h3>
 <h4 align="center">Less than 1kb gzipped</h4>
