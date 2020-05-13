@@ -1,3 +1,7 @@
+<a name="1.0.6"></a>
+# [1.0.6](https://github.com/nicolasbeauvais/vue-add-to-calendar/compare/1.0.5..1.0.6) (2020-05-13)
+- Add Office 365 calendar
+
 <a name="1.0.5"></a>
 # [1.0.5](https://github.com/nicolasbeauvais/vue-add-to-calendar/compare/1.0.4...1.0.5) (2020-05-13)
 - Fix Microsoft calendar
