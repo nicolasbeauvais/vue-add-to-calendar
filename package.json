@@ -54,7 +54,7 @@
     "uglify-js": "^2.6.1",
     "vue": "^2.0.0",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^3.1.11"
   },
   "files": [
     "dist/vue-add-to-calendar.js",
