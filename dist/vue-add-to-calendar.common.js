@@ -1,5 +1,5 @@
 /*!
- * vue-add-to-calendar v1.0.5 
+ * vue-add-to-calendar v1.0.6 
  * (c) 2020 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -175,7 +175,7 @@ var AddToCalendar = {
   }
 };
 
-AddToCalendar.version = '1.0.5';
+AddToCalendar.version = '1.0.6';
 
 AddToCalendar.install = function (Vue) {
   Vue.component('add-to-calendar', AddToCalendar);

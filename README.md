@@ -1,4 +1,4 @@
-# vue-add-to-calendar
+<h1 align="center">Vue Add To Calendar</h1>
 
 [![Release](https://img.shields.io/github/release/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-add-to-calendar/releases)
 [![Build Status](https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar.svg?branch=master)](https://travis-ci.org/nicolasbeauvais/vue-add-to-calendar)
@@ -7,15 +7,21 @@
 [![License](https://img.shields.io/github/license/nicolasbeauvais/vue-add-to-calendar.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-add-to-calendar/blob/master/LICENSE)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-A Vue.js component that provides 'Add to Calendar' functionality
+<h3 align="center">A Vue.js renderless component providing 'Add to Calendar' functionality</h3>
+<h4 align="center">Less than 1kb gzipped</h4>
+
+--- 
 
 ## [Demo](https://nicolasbeauvais.github.io/vue-add-to-calendar/)
-&nbsp;
+
+### What is a renderless component?
+
+Renderless components give you the highest possible control over your markup and styling. This means that `vue-add-to-calendar` ship with minimal HTML and no CSS to let you adapt the look and feel of the components to your needs. You can learn more about renderless components in [this blog article](https://adamwathan.me/renderless-components-in-vuejs/) by [@adamwathan](https://github.com/adamwathan).
+
 ## Include support for:
 - Google calendar
 - Microsoft live calendar
-
----
+- Office 365 calendar
 
 ## Installation
 
@@ -67,6 +73,9 @@ Vue.use(AddToCalendar);
       <i class="fa fa-windows"></i> Add to Microsoft live calendar
     </microsoft-calendar>
     
+    <office365-calendar id="office365-calendar">
+      <i class="fa fa-windows"></i> Add to Office365 outlook calendar
+    </office365-calendar>
   </div>
 </add-to-calendar>
 ```
@@ -87,7 +96,7 @@ Prop           | Data Type  | Default   | Description
 Feel free to open an issue to ask for a new calendar support.
 
 ## Changelog
-Details changes for each release are documented in the [CHANGELOG.md](https://github.com/nicolasbeauvais/vue-add-to-calendar/blob/master/CHANGELOG.md).
+Detailed changes for each release can be found in [CHANGELOG.md](https://github.com/nicolasbeauvais/vue-add-to-calendar/blob/master/CHANGELOG.md).
 
 ## Issues
 Please make sure to read the [Issue Reporting Checklist](https://github.com/nicolasbeauvais/vue-add-to-calendar/blob/master/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
