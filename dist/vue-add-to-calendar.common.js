@@ -1,6 +1,6 @@
 /*!
- * vue-add-to-calendar v1.0.6 
- * (c) 2020 nicolasbeauvais
+ * vue-add-to-calendar v1.0.7 
+ * (c) 2021 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
@@ -17,7 +17,7 @@ var AddToCalendarMixin = {
 
 var calendars = {
   google: {
-    url: 'http://www.google.com/calendar/event?action=TEMPLATE&trp=false',
+    url: 'http://www.google.com/calendar/render?action=TEMPLATE&trp=false',
     parameters: function parameters (title, location, details, start, end) {
       var parameters = {
         text: title,
@@ -175,7 +175,7 @@ var AddToCalendar = {
   }
 };
 
-AddToCalendar.version = '1.0.6';
+AddToCalendar.version = '1.0.7';
 
 AddToCalendar.install = function (Vue) {
   Vue.component('add-to-calendar', AddToCalendar);
