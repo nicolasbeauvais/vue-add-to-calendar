@@ -2,7 +2,7 @@ import AddToCalendarMixin from './add-to-calendar-mixin';
 
 export const calendars = {
   google: {
-    url: 'http://www.google.com/calendar/event?action=TEMPLATE&trp=false',
+    url: 'http://www.google.com/calendar/render?action=TEMPLATE&trp=false',
     parameters (title, location, details, start, end) {
       const parameters = {
         text: title,
