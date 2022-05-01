@@ -1,3 +1,7 @@
+<a name="1.0.8"></a>
+# [1.0.8](https://github.com/nicolasbeauvais/vue-add-to-calendar/compare/1.0.7..1.0.8) (2020-05-13)
+- Fix Microsoft calendar links
+
 <a name="1.0.7"></a>
 # [1.0.7](https://github.com/nicolasbeauvais/vue-add-to-calendar/compare/1.0.6..1.0.7) (2020-05-13)
 - Fix Google calendar link
