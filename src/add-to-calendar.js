@@ -115,8 +115,8 @@ export default {
         this.formatString(this.title),
         this.formatString(this.location),
         this.formatString(this.details),
-        this.formatDate(this.start),
-        this.formatDate(this.end)
+        this.formatDate(this.start, calendar),
+        this.formatDate(this.end, calendar)
       );
 
       for (const key in parameters) {
@@ -132,8 +132,14 @@ export default {
       return encodeURIComponent(string).replace(/%20/g, '+');
     },
 
-    formatDate (date) {
-      return date ? date.toISOString().replace(/-|:|\.\d+/g, '') : null;
+    formatDate (date, calendar) {
+      if (!date) { return null; }
+
+      const formatDate = date.toISOString();
+      const isGoogle = calendar === 'google';
+      return isGoogle
+        ? formatDate.replace(/-|:|\.\d+/g, '')
+        : formatDate;
     }
   },
 
